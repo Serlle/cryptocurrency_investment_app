@@ -1,4 +1,4 @@
-class Crypto::InvestmentCsvImportController < ApplicationController
+class Crypto::CsvImportsController < ApplicationController
   def new
   end
 
@@ -8,12 +8,13 @@ class Crypto::InvestmentCsvImportController < ApplicationController
       csv_data = CsvReaderService.new(uploaded_file.path).read
       investment = InvestmentCalculatorService.new(csv_data)
       calculated_value = investment.calculate
+
       flash[:success] = 'Archivo CSV importado y calculo hecho exitosamente.'
+      redirect_to crypto_show_results_path(calculated_value: calculated_value)
     else
       flash[:error] = 'Por favor, selecciona un archivo CSV válido.'
-      redire_to new_crypto_investment_csv_import_path
+      redire_to new_crypto_csv_import_path
     end
-
   end
 
   private

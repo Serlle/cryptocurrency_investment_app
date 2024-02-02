@@ -1,6 +1,6 @@
 # require "test_helper"
 
-# class Crypto::InvestmentCsvImportControllerTest < ActionDispatch::IntegrationTest
+# class Crypto::CsvImportsControllerTest < ActionDispatch::IntegrationTest
 #   test "should get new" do
 #     get crypto_investment_csv_import_new_url
 #     assert_response :success

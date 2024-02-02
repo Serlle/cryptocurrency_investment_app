@@ -1,0 +1,11 @@
+<h1>Investment Csv Export#show</h1>
+<% if @calculated_value.present? %>
+  <h2>Tu obtendras de ganancia en cada criptomoneda:</h2>
+  <ul>
+    <% @calculated_value.each do |result| %>
+      <li><strong><%= result[:currency] %>:</strong> <%= result[:final_projected_balance] %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No hay resultados disponibles.</p>
+<% end %>
