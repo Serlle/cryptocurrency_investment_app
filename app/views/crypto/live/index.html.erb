@@ -1,4 +1,4 @@
-<h1>CryptoLive#index</h1> <br>
+<h1>Live#index</h1> <br>
 <p>Cardano</p>
 <%= number_with_precision(@ada['rate'], precision: 2) %>
 
@@ -8,4 +8,4 @@
 <p>Ether</p>
 <%= number_with_precision(@eth['rate'], precision: 2) %>
 
-
+<br><%= link_to "Invest", new_crypto_investment_csv_import_path %>
