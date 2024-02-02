@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faraday'
 
+gem 'pry-byebug', group: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -21,7 +24,6 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
-  gem "pry"
 end
 
 group :test do

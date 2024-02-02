@@ -3,7 +3,7 @@ require "test_helper"
 module Crypto
   class LiveControllerTest < ActionDispatch::IntegrationTest
     def setup
-      @api_key = '761BFA6C-3951-44B2-9F69-24A0E6DD7414'  # Reemplaza con la clave de API real para las pruebas
+      @api_key =  ENV['COINAPI_KEY']
       @coinapi_service = CoinapiService.new(@api_key)
     end
 
