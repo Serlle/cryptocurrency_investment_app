@@ -1,11 +1,27 @@
 <h1>Investment Csv Export#show</h1>
+
 <% if @calculated_value.present? %>
-  <h2>Tu obtendras de ganancia en cada criptomoneda:</h2>
-  <ul>
-    <% @calculated_value.each do |result| %>
-      <li><strong><%= result[:currency] %>:</strong> <%= result[:final_projected_balance] %></li>
-    <% end %>
-  </ul>
+  <h2>Informacion de Inversion:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Moneda</th>
+        <th>Interés Mensual</th>
+        <th>Balance Inicial</th>
+        <th>Balance Proyectado Final(USD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @calculated_value.each do |result| %>
+        <tr>
+          <td><%= result[:currency] %></td>
+          <td><%= result[:monthly_rate] %>%</td>
+          <td><%= result[:initial_balance] %></td>
+          <td>$<%= result[:final_projected_balance] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else %>
   <p>No hay resultados disponibles.</p>
 <% end %>

@@ -14,6 +14,8 @@ class InvestmentCalculatorService
 
       results << {
         currency: row[:moneda],
+        monthly_rate: row[:interes_mensual],
+        initial_balance: balance_ini,
         final_projected_balance: final_projected_balance.round(2)
       }
     end
