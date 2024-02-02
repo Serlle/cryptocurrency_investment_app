@@ -22,6 +22,6 @@ class CoinapiService
     end
 
     request = @conn.get(endpoint, params)
-    return { status: request.status, usd: request.body["rate"] }
+    return { status: request.status, data: request.body["rates"] }
   end
 end
