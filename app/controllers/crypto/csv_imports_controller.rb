@@ -20,6 +20,6 @@ class Crypto::CsvImportsController < ApplicationController
   private
 
   def csv_file_params
-    params.permit(:csv_file)
+    params.permit(:csv_file, :authenticity_token, :commit)
   end
 end

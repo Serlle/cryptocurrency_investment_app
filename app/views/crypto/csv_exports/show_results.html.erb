@@ -22,6 +22,10 @@
       <% end %>
     </tbody>
   </table>
+
 <% else %>
-  <p>No hay resultados disponibles.</p>
+  <p>No hay resultados disponibles. Algo salio mal o necesitas primero exportar un archivo csv.</p>
 <% end %>
+
+<br><%= link_to 'Exportar CSV', crypto_csv_exports_create_path(format: :csv, calculated_value: @calculated_value) %>
+<br><%= link_to 'Exportar JSON', crypto_csv_exports_create_path( format: :json, calculated_value: @calculated_value)%>
