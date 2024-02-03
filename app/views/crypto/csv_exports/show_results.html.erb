@@ -2,13 +2,16 @@
 
 <% if @calculated_value.present? %>
   <h2>Informacion de Inversion:</h2>
-  <table>
+  <table border="1">
     <thead>
       <tr>
         <th>Moneda</th>
         <th>Interés Mensual</th>
         <th>Balance Inicial</th>
         <th>Balance Proyectado Final(USD)</th>
+        <th>USD a Crypto</th>
+        <th>Crypto a Dolares</th>
+        <th>Tu ganancia a Crypto</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +21,9 @@
           <td><%= result[:monthly_rate] %>%</td>
           <td><%= result[:initial_balance] %></td>
           <td>$<%= result[:final_projected_balance] %></td>
+          <td>$<%= result[:price_usd] %></td>
+          <th>$<%= result[:crypto_uds] %></th>
+          <th>$<%= result[:crypto_profit]%></th>
         </tr>
       <% end %>
     </tbody>

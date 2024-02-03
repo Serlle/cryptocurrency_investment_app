@@ -1,11 +1,31 @@
-<h1>Live#index</h1> <br>
-<p>Cardano</p>
-<%= number_with_precision(@ada['rate'], precision: 2) %>
+<span id="current-time"><%= Time.current.strftime("%Y-%m-%d %H:%M:%S") %></span>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Crypto</th>
+      <th>USD a Crypto</th>
+      <th>Crypto a USD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cardano</td>
+      <td>$<%= @ada["rate"] %></td>
+      <td>Un ADA vale <%= number_to_currency(1 / @ada["rate"]) %> USD</td>
 
-<p>Bitcoin</p>
-<%= number_with_precision(@btc['rate'], precision: 2) %>
-
-<p>Ether</p>
-<%= number_with_precision(@eth['rate'], precision: 2) %>
+    </tr>
+    <tr>
+      <td>Bitcoin</td>
+      <td>$<%= @btc["rate"] %></td>
+      <td>Un BTC vale <%= number_to_currency(1 / @btc["rate"]) %> USD</td>
+    </tr>
+    <tr>
+      <td>Ether</td>
+      <td>$<%= @eth["rate"] %></td>
+      <td>Un ETH vale <%= number_to_currency(1 / @eth["rate"]) %> USD</td>
+    </tr>
+  </tbody>
+</table>
 
 <br><%= link_to "Invest", new_crypto_csv_import_path %>

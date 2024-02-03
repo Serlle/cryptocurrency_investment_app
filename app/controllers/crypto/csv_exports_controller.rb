@@ -33,6 +33,6 @@ class Crypto::CsvExportsController < ApplicationController
   private 
 
   def calculated_value_params
-    params.permit(:format, calculated_value: [:currency, :monthly_rate, :initial_balance, :final_projected_balance])
+    params.permit(:format, calculated_value: [:currency, :monthly_rate, :initial_balance, :final_projected_balance, :price_usd, :crypto_uds, :crypto_profit])
   end
 end
